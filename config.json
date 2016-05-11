@@ -1,0 +1,15 @@
+{
+    
+    "auth": {
+        "token": "MTc5MDcyOTc5OTQ5NDUzMzEz.ChGb2w.1qEBmYBArq2SITuHJXoO0KOUjoY"    
+    },
+    
+    "modules": {
+        "debug": {
+            "active": true,
+            "path": "./debug.js"
+        }
+    },
+    
+    "cmd": ["cthulhu", "cthulu"]
+}
