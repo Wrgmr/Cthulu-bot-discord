@@ -27,6 +27,4 @@ Debug = function()
     });
 }
 
-Debug.prototype.deactivate = function() { }
-
-module.exports = Debug;
+module.exports = new Debug();
