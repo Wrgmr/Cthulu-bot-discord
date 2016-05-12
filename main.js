@@ -2,13 +2,16 @@
 var Discord = require("discord.js");
 var fs = require("fs");
 
-// Create the 
+// Create the bot
 var bot = new Discord.Client();
+
+// Initialize the parser
+const parser = require("./parser.js");
 
 // Get configuration data
 const cfg = require("./config.json");
 
-// Load terminal
+// Load utils
 const debug = require("./debug.js");
 
 // Load plugins
@@ -22,5 +25,11 @@ bot.loginWithToken(cfg.token, function(error) {
 	if (error)
 	{
 		console.log("Error logging in!")
+		process.exit();
+	}
+	else
+	{
+		console.log("Logged in successfully!");
+		debug.init();
 	}
 });
