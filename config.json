@@ -1,4 +1,4 @@
 {
-    "plugins": "./plugins/",
-    "cmd": ["cthulhu", "cthulu"]
+    "commands": "./commands/",
+    "cmd": ["cthulhu", "cthulu", "tulu", "clulu", "clooloo", "cthullu", "c'thulhu", "cighulu", "cathulu", "c'thlu", "culo", "kathulu", "katulu", "kutulu", "kthulhu", "kthulu", "q'thulu", "k'tulu", "kthulhut", "kutu", "kulhu", "kutunluu", "ktulu", "kuitiliú", "cqulu", "cthlhu", "thu thu", "c"]
 }

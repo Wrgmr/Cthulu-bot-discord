@@ -13,11 +13,11 @@ Parser.prototype.tokenize = (text) =>
         switch(state) {
             // The character is outside of a quote block.
             case 0:
-                if (ch === '\'' || ch === '\"') {
+                if (ch === '\"') {
                     state = 1;
                 }
                 else if (ch === ' ') {
-                    lst.push(token);
+                    if (token) lst.push(token);
                     token = "";
                 }
                 else {
@@ -26,9 +26,9 @@ Parser.prototype.tokenize = (text) =>
                 break;
             // The character is inside a quote block.
             case 1:
-                if (ch === '\'' || ch === '\"') {
+                if (ch === '\"') {
                      state = 0;
-                     lst.push(token);
+                     if (token) lst.push(token);
                      token = "";
                 }
                 else {
