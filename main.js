@@ -36,11 +36,17 @@ cmd_lst["help"] = {
 // Command event
 bot.on("message", function(message) {
 	tokens = parser.tokenize(message.content).reverse();
-	if (cfg.cmd.indexOf(tokens.pop().toLowerCase()) >= 0)
-	{
-		cmd = tokens.pop();
-		cmd_lst[cmd].fn(bot, message);
-	} 
+	try {
+		if (cfg.cmd.indexOf(tokens.pop().toLowerCase()) >= 0)
+		{
+			cmd = tokens.pop();
+			if (cmd_lst[cmd].args === tokens.length)
+				cmd_lst[cmd].fn(bot, message, tokens);
+		} 
+	}
+	catch (err) {
+		bot.reply(message, "That command was not recognized.");
+	}
 });
 
 
