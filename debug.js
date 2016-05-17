@@ -1,9 +1,6 @@
 Parser = require("./parser.js");
 
-Debug = function()
-{
-    
-}
+Debug = function() { }
 
 Debug.prototype.init = function() {
     // Import READLINE package.
