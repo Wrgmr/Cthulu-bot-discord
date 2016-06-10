@@ -10,7 +10,7 @@ module.exports = {
         "description": "Tells a joke.",
         "args": 0,
         "fn": (bot, message) => {
-            bot.sendMessage(message.channel, "Why did I cross the road, foolish mortal?");
+            bot.sendMessage(message.channel, "Why did I cross the road, mortal?");
         }
     },
     "smite": {
