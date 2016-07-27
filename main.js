@@ -24,6 +24,7 @@ for (var i in dir) {
 }
 cmd_lst["help"] = {
 	"description": "Displays available commands.",
+	"args": 0,
 	"fn": (bot, message) => {
 		txt = "";
 		for (var i in cmd_lst) {
@@ -46,6 +47,7 @@ bot.on("message", function(message) {
 	}
 	catch (err) {
 		bot.reply(message, "That command was not recognized.");
+		bot.reply(message, "You screwed up. Here's how: " + message.content);
 	}
 });
 
