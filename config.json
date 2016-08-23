@@ -3,10 +3,14 @@
     "log_to_file": true,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "log_path": "/var/log/cthulhu.log",
 =======
     "log_path": "/var/log/cthulhu-log.txt",
 >>>>>>> refs/remotes/origin/dev
+=======
+    "log_path": "cthulhu-log.txt",
+>>>>>>> parent of a42d2a6... Changed default log file name and path
 =======
     "log_path": "cthulhu-log.txt",
 >>>>>>> parent of a42d2a6... Changed default log file name and path
