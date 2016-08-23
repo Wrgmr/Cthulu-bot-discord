@@ -17,6 +17,7 @@ const cfg = require("./config.json");
 cmd_lst = {}
 dir = fs.readdirSync(cfg.commands);
 for (var i in dir) {
+	debug.log("Loading commands from " + i);
 	pkg = require(cfg.commands + dir[i]);
 	for (var j in pkg) {
 		cmd_lst[j] = pkg[j];
@@ -36,18 +37,23 @@ cmd_lst["help"] = {
 
 // Command event
 bot.on("message", function(message) {
+	debug.log("Parsing Command: " + message.content);
 	tokens = parser.tokenize(message.content).reverse();
+	debug.log("Successfully Parsed Command: " + message.content);
 	try {
 		if (cfg.cmd.indexOf(tokens.pop().toLowerCase()) >= 0)
 		{
 			cmd = tokens.pop();
 			if (cmd_lst[cmd].args === tokens.length)
+			{
 				cmd_lst[cmd].fn(bot, message, tokens);
-		} 
+				debug.log("Ran Valid Command: " + message.content);
+			}
+		}
 	}
 	catch (err) {
-		bot.reply(message, "That command was not recognized.");
-		bot.reply(message, "You screwed up. Here's how: " + message.content);
+		bot.reply(message, "Command '" + message.content + "' is not valid.");
+		debug.log("Invalid Command: " + message.content);
 	}
 });
 
@@ -55,11 +61,11 @@ bot.on("message", function(message) {
 // Log the bot into Discord
 bot.loginWithToken(auth.token, function(error) {
 	if (error) {
-		console.log("Error logging in!")
+		debug.log("Error logging in!")
 		process.exit();
 	}
 	else {
-		console.log("Logged in successfully!");
+		debug.log("Logged in successfully!");
 		debug.init();
 	}
 });
