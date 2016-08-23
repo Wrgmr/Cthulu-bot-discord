@@ -1,19 +1,7 @@
 {
     "log_to_console": true,
     "log_to_file": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "log_path": "/var/log/cthulhu.log",
-=======
-    "log_path": "/var/log/cthulhu-log.txt",
->>>>>>> refs/remotes/origin/dev
-=======
-    "log_path": "cthulhu-log.txt",
->>>>>>> parent of a42d2a6... Changed default log file name and path
-=======
-    "log_path": "cthulhu-log.txt",
->>>>>>> parent of a42d2a6... Changed default log file name and path
     "commands": "./commands/",
     "cmd": ["cthulhu", "cthulu", "ctulu", "tulu", "clulu", "clooloo", "cthullu", "c'thulhu", "cighulu", "cathulu", "c'thlu", "culo", "kathulu", "katulu", "kutulu", "kthulhu", "kthulu", "q'thulu", "k'tulu", "kthulhut", "kutu", "kulhu", "kutunluu", "ktulu", "kuitiliú", "cqulu", "cthlhu", "thu thu", "c"]
 }
